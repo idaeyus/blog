@@ -18,7 +18,7 @@ Unlike most open-source collectives, the software we create isn’t designed for
 
 Our goal is to empower users to customize the software we build. By leveraging AI or coding themselves , users can tailor our software to their needs , whether it’s adjusting the UI, adding new features, or reshaping it entirely. That’s why every line of code we write is open-source. 
 
-	We ensure the base product is functional and hassle-free to use , but the true potential lies in how users make it their own.
+We ensure the base product is functional and hassle-free to use , but the true potential lies in how users make it their own.
 
 We are not yet another software company . 
 <b><i>The Software We Make</b></i> is different . 
