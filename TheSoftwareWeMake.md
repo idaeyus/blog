@@ -1,6 +1,4 @@
 
-
-
 # The Software We Make 
 
 ![The Software We Make](https://cdn.glitch.global/0846f6ac-90cd-4f0b-a9e6-783892332eac/The%20software%20we%20make.png?v=1734526238963)
