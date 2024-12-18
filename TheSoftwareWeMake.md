@@ -18,5 +18,8 @@ Our goal is to empower users to customize the software we build. By leveraging A
 
 We ensure the base product is functional and hassle-free to use , but the true potential lies in how users make it their own.
 
+Also, read [A Word From The Founders -1](https://www.github.com/idaeyus/blog/blob/main/AWordFromTheFounders-1.md) , which is related to this article.
+
+
 We are not yet another software company . 
 <b><i>The Software We Make</b></i> is different . 
