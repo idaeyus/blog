@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idaeyus / Blog</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.3.0/marked.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            padding: 20px;
+            overflow-x: auto;
+        }
+        
+        .terminal-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .navigation-helper {
+            position: absolute;
+            top: 50px;
+            right: 0;
+            color: #ffffff;
+            font-size: 12px;
+            text-align: right;
+        }
+        
+        .home-link {
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px;
+            border: 1px solid #ffffff;
+            background-color: transparent;
+            transition: all 0.2s ease;
+        }
+        
+        .home-link:hover {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        
+        .blog-header {
+            margin-top: 60px;
+            margin-bottom: 20px;
+        }
+        
+        .article-content {
+            margin-top: 20px;
+        }
+        
+        .article-content h1 {
+            color: #ffffff;
+            margin: 25px 0 15px 0;
+            font-size: 18px;
+        }
+        
+        .article-content h2 {
+            color: #ffffff;
+            margin: 25px 0 10px 0;
+            font-size: 16px;
+        }
+        
+        .article-content h3 {
+            color: #ffffff;
+            margin: 20px 0 8px 0;
+            font-size: 14px;
+        }
+        
+        .article-content p {
+            margin-bottom: 15px;
+            color: #ccc;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin: 15px 0;
+            padding-left: 20px;
+            color: #ccc;
+        }
+        
+        .article-content li {
+            margin-bottom: 8px;
+        }
+        
+        .article-content blockquote {
+            border-left: 3px solid #ffffff;
+            padding-left: 15px;
+            margin: 20px 0;
+            color: #aaa;
+            font-style: italic;
+        }
+        
+        .article-content code {
+            background-color: #333;
+            color: #ffffff;
+            padding: 2px 4px;
+            border-radius: 2px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .article-content pre {
+            background-color: #333;
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        
+        .article-content strong {
+            color: #ffffff;
+        }
+        
+        .article-content em {
+            color: #ccc;
+            font-style: italic;
+        }
+        
+        .article-content a {
+            color: #ffffff;
+            text-decoration: underline;
+            transition: all 0.2s ease;
+        }
+        
+        .article-content a:hover {
+            text-shadow: 0 0 5px #ffffff;
+        }
+        
+        .separator {
+            color: #ffffff;
+            margin: 20px 0;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            text-align: center;
+            color: #888;
+        }
+        
+        .cursor {
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                font-size: 12px;
+                padding: 10px;
+            }
+            
+            .terminal-container {
+                padding: 0;
+            }
+            
+            .home-link {
+                position: static;
+                display: block;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+            
+            .navigation-helper {
+                position: static;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            
+            .blog-header {
+                margin-top: 20px;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal-container">
+        <a href="index.html" class="home-link">Home</a>
+        
+        <div class="navigation-helper">
+<pre>Use [↑] [↓] arrows to navigate
+[ESC] to return home</pre>
+        </div>
+
+        <div class="blog-header">
+<pre><span style="color: #ffffff; font-size: 16px;">BLOG POST [03]</span>
+Title: The Software We Make
+Date: Dec 17 , 2024
+Status: [ACTIVE]
+<div class="separator">───────────────────────────────────────</div></pre>
+        </div>
+
+        <div class="article-content" id="markdown-content">
+        </div>
+
+        <div class="footer">
+<pre>───────────────────────────────────────
+Built with ♡ by the Idaeyus team of the internet
+System uptime: [CONNECTED]<span class="cursor">_</span>
+───────────────────────────────────────</pre>
+        </div>
+    </div>
+
+    <script>
+        const markdownContent = `
+
+# The Software We Make 
+
+<b>Idaeyus</b> has never been just another software company . It never set out to be one .
+
+From the very beginning, Idaeyus was envisioned as an open-source software collective, and that’s exactly what it remains today. But more than that, Idaeyus is a collective of  ideators .
+
+## What Sets Idaeyus Apart?
+
+Unlike most open-source collectives, the software we create isn’t designed for mass consumption in its original form. You might notice that it sometimes lacks certain features you’d expect from a finished product.
+
+### Why is that?
+
+Our goal is to empower users to customize the software we build. By leveraging AI or coding themselves , users can tailor our software to their needs , whether it’s adjusting the UI, adding new features, or reshaping it entirely. That’s why every line of code we write is open-source. 
+
+We ensure the base product is functional and hassle-free to use , but the true potential lies in how users make it their own.
+
+Also, read [A Word From The Founders -1](https://www.github.com/idaeyus/blog/blob/main/AWordFromTheFounders-1.md) , which is related to this article.
+
+
+We are not yet another software company . 
+<b><i>The Software We Make</b></i> is different . 
+
+        `;
+
+        document.getElementById('markdown-content').innerHTML = marked.parse(markdownContent);
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                e.preventDefault();
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
+</body>
+</html>
