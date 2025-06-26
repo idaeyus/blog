@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idaeyus / Blog</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.4;
+            padding: 20px;
+            overflow-x: auto;
+        }
+        
+        .terminal-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .home-link {
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px;
+            border: 1px solid #ffffff;
+            background-color: transparent;
+            transition: all 0.2s ease;
+        }
+        
+        .home-link:hover {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        
+        .navigation-helper {
+            position: absolute;
+            top: 50px;
+            right: 0;
+            color: #ffffff;
+            font-size: 12px;
+            text-align: right;
+        }
+        
+        .blog-header {
+            margin-top: 60px;
+            margin-bottom: 20px;
+        }
+        
+        .blog-section {
+            margin-top: 0;
+        }
+        
+        .blog-post {
+            margin: 15px 0;
+            padding: 10px;
+            border-bottom: 1px solid #333;
+            transition: all 0.2s ease;
+        }
+        
+        .blog-post:last-child {
+            border-bottom: none;
+        }
+        
+        .blog-post a {
+            color: #ffffff;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .post-title {
+            color: #ffffff;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .post-date {
+            color: #888;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+        
+        .post-excerpt {
+            color: #ccc;
+            margin-bottom: 5px;
+        }
+        
+        .enter-text {
+            color: #ffffff;
+            font-size: 12px;
+        }
+        
+        .separator {
+            color: #ffffff;
+            margin: 20px 0;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            text-align: center;
+            color: #888;
+        }
+        
+        .cursor {
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                font-size: 12px;
+                padding: 10px;
+            }
+            
+            .terminal-container {
+                padding: 0;
+            }
+            
+            .home-link {
+                position: static;
+                display: block;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+            
+            .navigation-helper {
+                position: static;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            
+            .blog-header {
+                margin-top: 20px;
+                margin-bottom: 15px;
+            }
+            
+            .blog-section {
+                margin-top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal-container">
+        <a href="https://idaeyus.github.io/" class="home-link">Website</a>
+        
+        <div class="navigation-helper">
+<pre>Use [↑] [↓] arrows to navigate
+[ENTER] to select</pre>
+        </div>
+
+        <div class="blog-header">
+<pre><span style="color: #ffffff; font-size: 16px;">The Idaeyus Blog</span>
+Updates , information and words from the Idaeyus team
+
+<div class="separator">───────────────────────────────────────</div>
+
+Available Posts:</pre>
+        </div>
+
+        <div class="blog-section">
+            <div class="blog-post">
+                <a href="/posts/t-s-w-m-1.html">
+                    <div class="post-title">[03] The Software We Make</div>
+                    <div class="post-date">Dec 17 , 2024</div>
+                    <div class="post-excerpt">A little about the software we make...</div>
+                    <div class="enter-text">[ENTER] to read →</div>
+                </a>
+            </div>
+
+            <div class="blog-post">
+                <a href="/posts/a-w-f-t-f-1-1.html">
+                    <div class="post-title">[02] A word from the founders - 1</div>
+                    <div class="post-date">Dec 16 , 2024</div>
+                    <div class="post-excerpt">An update from the founders.</div>
+                    <div class="enter-text">[ENTER] to read →</div>
+                </a>
+            </div>
+
+            <div class="blog-post">
+                <a href="/posts/i-d-b-t-1.html">
+                    <div class="post-title">[01] Ideas don't build themselves</div>
+                    <div class="post-date">July 16 , 2024</div>
+                    <div class="post-excerpt">What we stand for.</div>
+                    <div class="enter-text">[ENTER] to read →</div>
+                </a>
+            </div>
+
+<pre><span class="cursor">_</span></pre>
+        </div>
+
+        <div class="footer">
+<pre>───────────────────────────────────────
+Built with ♡ by the Idaeyus team of the internet
+System uptime: [CONNECTED]
+───────────────────────────────────────</pre>
+        </div>
+    </div>
+
+    <script>
+        let currentSelection = 0;
+        const posts = document.querySelectorAll('.blog-post');
+        
+        function highlightPost(index) {
+            posts.forEach((post, i) => {
+                if (i === index) {
+                    post.style.backgroundColor = '#333333';
+                    post.style.border = '1px solid #ffffff';
+                } else {
+                    post.style.backgroundColor = 'transparent';
+                    post.style.border = 'none';
+                }
+            });
+        }
+
+        function scrollToPost(index) {
+            const selectedPost = posts[index];
+            if (selectedPost) {
+                if (index === 0) {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    selectedPost.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                }
+            }
+        }
+
+        highlightPost(0);
+
+        document.addEventListener('keydown', function(e) {
+            switch(e.key) {
+                case 'ArrowUp':
+                    e.preventDefault();
+                    currentSelection = Math.max(0, currentSelection - 1);
+                    highlightPost(currentSelection);
+                    scrollToPost(currentSelection);
+                    break;
+                case 'ArrowDown':
+                    e.preventDefault();
+                    currentSelection = Math.min(posts.length - 1, currentSelection + 1);
+                    highlightPost(currentSelection);
+                    scrollToPost(currentSelection);
+                    break;
+                case 'Enter':
+                    e.preventDefault();
+                    const selectedPost = posts[currentSelection];
+                    const link = selectedPost.querySelector('a');
+                    if (link.href && link.href !== '#') {
+                        window.location.href = link.href;
+                    }
+                    break;
+            }
+        });
+    </script>
+</body>
+</html>
