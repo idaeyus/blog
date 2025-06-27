@@ -239,10 +239,22 @@ Also, read [The Software We Make](https://www.github.com/idaeyus/blog/blob/main/
         document.getElementById('markdown-content').innerHTML = marked.parse(markdownContent);
 
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
+            if (e.key === 'Escape' || e.keyCode === 27) {
                 e.preventDefault();
                 window.location.href = '../index.html';
             }
+        });
+        
+        document.addEventListener('keyup', function(e) {
+            if (e.key === 'Escape' || e.keyCode === 27) {
+                e.preventDefault();
+                window.location.href = '../index.html';
+            }
+        });
+        
+        window.addEventListener('load', function() {
+            document.body.focus();
+            document.body.setAttribute('tabindex', '-1');
         });
     </script>
 </body>
