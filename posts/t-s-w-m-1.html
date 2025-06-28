@@ -194,7 +194,7 @@
 </head>
 <body>
     <div class="terminal-container">
-        <a href="https://idaeyus.github.io/blog/" class="home-link">Home</a>
+        <a href="../index.html" class="home-link">Home</a>
         
         <div class="navigation-helper">
 <pre>Use [↑] [↓] arrows to navigate
@@ -223,6 +223,7 @@ System uptime: [CONNECTED]<span class="cursor">_</span>
     <script>
         const markdownContent = `
 
+
 # The Software We Make 
 
 <b>Idaeyus</b> has never been just another software company . It never set out to be one .
@@ -250,10 +251,22 @@ We are not yet another software company .
         document.getElementById('markdown-content').innerHTML = marked.parse(markdownContent);
 
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
+            if (e.key === 'Escape' || e.keyCode === 27) {
                 e.preventDefault();
-                window.location.href = 'index.html';
+                window.location.href = '../index.html';
             }
+        });
+        
+        document.addEventListener('keyup', function(e) {
+            if (e.key === 'Escape' || e.keyCode === 27) {
+                e.preventDefault();
+                window.location.href = '../index.html';
+            }
+        });
+        
+        window.addEventListener('load', function() {
+            document.body.focus();
+            document.body.setAttribute('tabindex', '-1');
         });
     </script>
 </body>
