@@ -238,10 +238,22 @@ for the fact that IDEAS DONT BUILD THEMSELVES.
         document.getElementById('markdown-content').innerHTML = marked.parse(markdownContent);
 
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                e.preventDefault();
-                window.location.href = 'index.html';
+            if (e.key === 'Escape' || e.keyCode === 27) {Add commentMore actions
+                e.preventDefault();Add commentMore actions
+                window.location.href = '../index.html';
             }
+        });
+        
+        document.addEventListener('keyup', function(e) {
+            if (e.key === 'Escape' || e.keyCode === 27) {
+                e.preventDefault();
+                window.location.href = '../index.html';
+            }
+        });
+        
+        window.addEventListener('load', function() {
+            document.body.focus();
+            document.body.setAttribute('tabindex', '-1');
         });
     </script>
 </body>
