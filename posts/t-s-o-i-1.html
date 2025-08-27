@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idaeyus / Blog</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.3.0/marked.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            padding: 20px;
+            overflow-x: auto;
+        }
+        
+        .terminal-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .navigation-helper {
+            position: absolute;
+            top: 50px;
+            right: 0;
+            color: #ffffff;
+            font-size: 12px;
+            text-align: right;
+        }
+        
+        .home-link {
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px;
+            border: 1px solid #ffffff;
+            background-color: transparent;
+            transition: all 0.2s ease;
+        }
+        
+        .home-link:hover {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        
+        .blog-header {
+            margin-top: 60px;
+            margin-bottom: 20px;
+        }
+        
+        .article-content {
+            margin-top: 20px;
+        }
+        
+        .article-content h1 {
+            color: #ffffff;
+            margin: 25px 0 15px 0;
+            font-size: 18px;
+        }
+        
+        .article-content h2 {
+            color: #ffffff;
+            margin: 25px 0 10px 0;
+            font-size: 16px;
+        }
+        
+        .article-content h3 {
+            color: #ffffff;
+            margin: 20px 0 8px 0;
+            font-size: 14px;
+        }
+        
+        .article-content p {
+            margin-bottom: 15px;
+            color: #ccc;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin: 15px 0;
+            padding-left: 20px;
+            color: #ccc;
+        }
+        
+        .article-content li {
+            margin-bottom: 8px;
+        }
+        
+        .article-content blockquote {
+            border-left: 3px solid #ffffff;
+            padding-left: 15px;
+            margin: 20px 0;
+            color: #aaa;
+            font-style: italic;
+        }
+        
+        .article-content code {
+            background-color: #333;
+            color: #ffffff;
+            padding: 2px 4px;
+            border-radius: 2px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .article-content pre {
+            background-color: #333;
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        
+        .article-content strong {
+            color: #ffffff;
+        }
+        
+        .article-content em {
+            color: #ccc;
+            font-style: italic;
+        }
+        
+        .article-content a {
+            color: #ffffff;
+            text-decoration: underline;
+            transition: all 0.2s ease;
+        }
+        
+        .article-content a:hover {
+            text-shadow: 0 0 5px #ffffff;
+        }
+        
+        .separator {
+            color: #ffffff;
+            margin: 20px 0;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            text-align: center;
+            color: #888;
+        }
+        
+        .cursor {
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                font-size: 12px;
+                padding: 10px;
+            }
+            
+            .terminal-container {
+                padding: 0;
+            }
+            
+            .home-link {
+                position: static;
+                display: block;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+            
+            .navigation-helper {
+                position: static;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            
+            .blog-header {
+                margin-top: 20px;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal-container">
+        <a href="../index.html" class="home-link">Home</a>
+        
+        <div class="navigation-helper">
+<pre>Use [↑] [↓] arrows to navigate
+[ESC] to return home</pre>
+        </div>
+
+        <div class="blog-header">
+<pre><span style="color: #ffffff; font-size: 16px;">BLOG POST [04]</span>
+Title: The state of Idaeyus - 1
+Date: August 26 , 2025
+Status: [ACTIVE]
+<div class="separator">───────────────────────────────────────</div></pre>
+        </div>
+
+        <div class="article-content" id="markdown-content">
+        </div>
+
+        <div class="footer">
+<pre>───────────────────────────────────────
+Built with ♡ by the Idaeyus team of the internet
+System uptime: [CONNECTED]<span class="cursor">_</span>
+───────────────────────────────────────</pre>
+        </div>
+    </div>
+
+    <script>
+        const markdownContent = `
+
+The past couple of weeks have been very productive for us. We've worked on a lot of things, we've taken hard decisions, we've spoken to a lot of people and it's all lead to this announcement.
+
+Idaeyus will be different from now, so let's dive right in.
+
+## 1. The next direction for Idaeyus
+With all the advancements in AI, frontier software can now be created by anyone with internet access. Over 20%* of the people we've surveyed use custom built (using AI) alternatives to major paid software. With the ability to create functional software, we believe it's now time to take Idaeyus from an OSS collective to something a little for fit for the time.
+
+Most of the time, we've been praised for the ideas we've come up with. So we will now be capitalizing on this. Idaeyus will now have another segment where we publish only our ideas and the prompts that might be required to actually build them. This way, anyone will be able to build the ideas we have, which they may find useful, in the way they want.
+
+Albeit, we will continue to publish the code we could generate which might help with the direction for the AI. Read why this is important in our blog : "Why OSS matters in the AI age"
+
+We will very soon release another update talking about this new segment of Idaeyus.
+
+## 2. Project Préstart
+Today, we are announcing our game studio. This studio, codenamed "Préstart", will be unlike any other. Préstart, being first of its kind, will focus on making games for the *holodeck* era. With rapid advancements in the 3D World generation field (like [Interactive video by Odyssey](tab:https://www.x.com/odysseyml/status/1927767196756853179) or [Genie 3 by Google DeepMind](tab:https://www.x.com/GoogleDeepMind/status/1952732150928724043)), Préstart will focus on what we're calling "promptsheets" which are sequential prompts for an AI to generate interactive experiences one after the other under a certain condition (like the player collecting all coins in a level). The conditions themselves will be monitored by another agent.
+
+[Learn more about Project Préstart on the official website](tab:https://www.x.com/odysseyml/status/1927767196756853179)
+
+## 3. The Idaeyus Collective
+Along with the previously mentioned segments of Idaeyus, we are also starting our creative collective, The Idaeyus Collective. This will be a collective of not only programmers but also anybody with a creative skill willing to work with others and show their work to others. Our goal with The Idaeyus Collective is to organise a space (digital and physical) for creative people to get along and make things they've always wanted to, but with a community.
+
+## 4. The rebrand
+With the new direction in mind, we are strongly considering a rebrand of Idaeyus. Displayed below are the three logos we are considering for Idaeyus, your feedback would be appreciated [(you can let us know your feedback by replying to this post on X)](tab:https://www.x.com/odysseyml/status/1927767196756853179).
+<p style="display: flex; gap: 10px; align-items: center;">
+
+  <span style="font-size:12px;">
+    <img src="https://github.com/idaeyus/blog/blob/main/assets/ig-logo-1.png?raw=true" width="120"/> 1
+  </span>
+
+  <span style="font-size:12px;">
+    <img src="https://github.com/idaeyus/blog/blob/main/assets/id-logo-2.png?raw=true" width="120"/> 2
+  </span>
+
+  <span style="font-size:12px;">
+    <img src="https://github.com/idaeyus/blog/blob/main/assets/id-logo-3.png?raw=true" width="120"/> 3
+  </span>
+
+</p>
+
+
+With all that being said, we thank you from the bottom of our hearts for supporting us and we hope you will support us through this next era of Idaeyus.
+
+This is the age of ideators and we're here for it.
+
+<b> The Idaeyus team <b>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+###### Footnotes
+###### *1% of them did not know how to code 
+
+
+        `;
+
+        document.getElementById('markdown-content').innerHTML = marked.parse(markdownContent);
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' || e.keyCode === 27) {
+                e.preventDefault();
+                window.location.href = '../index.html';
+            }
+        });
+        
+        document.addEventListener('keyup', function(e) {
+            if (e.key === 'Escape' || e.keyCode === 27) {
+                e.preventDefault();
+                window.location.href = '../index.html';
+            }
+        });
+        
+        window.addEventListener('load', function() {
+            document.body.focus();
+            document.body.setAttribute('tabindex', '-1');
+        });
+    </script>
+</body>
+</html>
